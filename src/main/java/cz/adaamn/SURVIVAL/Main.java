@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.event.player.PlayerBedEnterEvent;
 import org.bukkit.event.player.PlayerGameModeChangeEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
@@ -48,6 +49,20 @@ public final class Main extends JavaPlugin implements Listener {
     public void onGMChange(PlayerGameModeChangeEvent e) {
         Player player = e.getPlayer();
         Bukkit.getServer().broadcastMessage(PREFIX + ChatColor.YELLOW + player.getName() + ChatColor.GRAY + " ted ma " + ChatColor.YELLOW + e.getNewGameMode());
+    }
+
+    @EventHandler
+    public void onSleep(PlayerBedEnterEvent e) {
+        Player player = e.getPlayer();
+
+        if (e.getBedEnterResult() == PlayerBedEnterEvent.BedEnterResult.OK) {
+            Bukkit.broadcastMessage(PREFIX + ChatColor.YELLOW + player.getName() + ChatColor.GRAY + " jde spat");
+
+            Bukkit.getScheduler().runTaskLater(this, () -> {
+                e.getPlayer().getWorld().setTime(0);
+                e.getPlayer().getWorld().setStorm(false);
+            }, 40L);
+        }
     }
 
     @Override
