@@ -2,7 +2,6 @@ package cz.adaamn.SURVIVAL;
 
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -16,7 +15,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.jetbrains.annotations.NotNull;
 
-public final class main extends JavaPlugin implements Listener {
+public final class Main extends JavaPlugin implements Listener {
     String PREFIX = "" + ChatColor.DARK_GRAY + "[" + ChatColor.YELLOW + "12LIFE" + ChatColor.DARK_GRAY + "] " + ChatColor.GRAY + "";
 
     @Override
