@@ -48,7 +48,7 @@ public final class Main extends JavaPlugin implements Listener {
     @EventHandler
     public void onGMChange(PlayerGameModeChangeEvent e) {
         Player player = e.getPlayer();
-        Bukkit.getServer().broadcastMessage(PREFIX + ChatColor.YELLOW + player.getName() + ChatColor.GRAY + " ted ma " + ChatColor.YELLOW + e.getNewGameMode());
+        Bukkit.getServer().broadcastMessage(PREFIX + ChatColor.YELLOW + player.getName() + ChatColor.GRAY + " ma nyni " + ChatColor.YELLOW + e.getNewGameMode());
     }
 
     @EventHandler
@@ -84,7 +84,7 @@ public final class Main extends JavaPlugin implements Listener {
                 }
             }
             else {
-                sender.sendMessage(PREFIX + "Pouziti: /kdeje <hrac>");
+                sender.sendMessage(PREFIX + "Pouziti: " + ChatColor.YELLOW + "/kdeje <hrac>");
             }
             return true;
         }
