@@ -84,7 +84,7 @@ public final class Main extends JavaPlugin implements Listener {
                 }
             }
             else {
-                sender.sendMessage(PREFIX + "Špatně zadané argumenty");
+                sender.sendMessage(PREFIX + "Pouziti: /kdeje <hrac>");
             }
             return true;
         }
